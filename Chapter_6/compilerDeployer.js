@@ -36,7 +36,7 @@ console.log('gasEstimate: ' +  gasEstimate);
 console.log('gasPrice: ' +  gasPrice);
 console.log('unlocking Coinbase account');
 
-const password = "Actionscript_63";
+const password = "yourPassword";
 try {
   web3.personal.unlockAccount(web3.eth.coinbase, password);
 } catch(e) {
