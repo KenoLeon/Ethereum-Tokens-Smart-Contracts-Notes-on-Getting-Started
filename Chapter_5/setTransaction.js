@@ -2,12 +2,12 @@ console.log('Setting up...');
 const solc = require('solc');
 const Web3 = require('web3');
 console.log('Reading abi');
-const contractABI = require("./basicStorage.json");
+const contractABI = require("./basicStorageEv.json");
 console.log('Connecting');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 console.log('Creating contract instance');
 const basicStorage = web3.eth.contract(contractABI);
-var basicStorageInstance = basicStorage.at("0x55df154522ed4cd5b2d2fb3a298c04a90f8c3333");
+var basicStorageInstance = basicStorage.at("0xc78ccc2a6c2b1f9aafad8ccf902ae310ec9a98d9");
 console.log('unlocking Coinbase account');
 const password = "yourPassword";
 try {
@@ -17,7 +17,7 @@ try {
   return;
 }
 console.log('sending Transaction to the contract');
-basicStorageInstance.set.sendTransaction(42, {
+basicStorageInstance.set.sendTransaction(30, {
   from: web3.eth.coinbase
 }, function(err, txHash) {
   if (err != null) {

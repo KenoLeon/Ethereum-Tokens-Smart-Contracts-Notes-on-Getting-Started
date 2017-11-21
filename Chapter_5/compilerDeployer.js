@@ -4,17 +4,17 @@ const solc = require('solc');
 const Web3 = require ('web3');
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 console.log('Reading contract Source...');
-const input = fs.readFileSync('Chapter_5/BasicStorage.sol');
+const input = fs.readFileSync('Chapter_5/BasicStorageEv.sol');
 console.log('Compiling...');
 const output = solc.compile(input.toString(), 1);
 if (output.errors) {
   console.log('Compiling failed with errors:' + output.errors);
   process.exit();
 }
-const bytecode = output.contracts[':BasicStorage'].bytecode;
-const abi = output.contracts[':BasicStorage'].interface;
+const bytecode = output.contracts[':BasicStorageEv'].bytecode;
+const abi = output.contracts[':BasicStorageEv'].interface;
 console.log('Saving ABI');
-fs.writeFile("Chapter_5/basicStorage.json", abi, function(err) {
+fs.writeFile("Chapter_5/basicStorageEv.json", abi, function(err) {
   if (err) {
     return console.log(err);
   }
@@ -22,7 +22,7 @@ fs.writeFile("Chapter_5/basicStorage.json", abi, function(err) {
 });
 const basicStorage = web3.eth.contract(JSON.parse(abi));
 console.log('Unlocking Coinbase account');
-const password = "Actionscript_63";
+const password = "yourPassword";
 try {
   web3.personal.unlockAccount(web3.eth.coinbase, password);
 } catch(e) {
