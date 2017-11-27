@@ -1,0 +1,15 @@
+console.log('Setting up...');
+const solc = require('solc');
+const Web3 = require('web3');
+console.log('Reading abi');
+const contractABI = require("./SetGetArrays.json");
+console.log('Connecting');
+const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+console.log('Creating contract instance');
+const contract = web3.eth.contract(contractABI);
+var contractInstance = contract.at("0x467da469d904b6c5cb1ede112549d456cd1568ce");
+console.log('calling contract');
+var array1 = contractInstance.getArray1();
+console.log('array1 :' + array1);
+var array2 = contractInstance.getArray2();
+console.log('array2 :' + array2);
