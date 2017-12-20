@@ -1,0 +1,14 @@
+No Book is perfect, here you can find some corrections I've found, but feel free to submit your own.
+
+
+V0: (Books bought before Dec 20th 2017 ):
+
+- Chapter_05 : File Title after Gas Concepts should be failTransaction.js instead of eventWatch.sol
+
+- Chapter_08 : TipJar Address missing :
+
+  Successfully deployed Contract with address: 0x4f91122c95896acd33b61db5b0ba9e53dc018b77
+
+- Chapter_11 : Last Truffle interaction file name should be 102030.js
+
+- 3 Downloaded copies had a password left by mistake on the compilerDeployer instead of "yourPassword".
