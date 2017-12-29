@@ -12,3 +12,5 @@ V0: (Books bought before Dec 20th 2017 ):
 - Chapter_11 : Last Truffle interaction file name should be 102030.js
 
 - 3 Downloaded copies had a password left by mistake on the compilerDeployer instead of "yourPassword".
+
+- iOS is mentioned in a couple of chapters, it should be macOSs
